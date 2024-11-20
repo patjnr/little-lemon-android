@@ -20,7 +20,7 @@ import androidx.navigation.NavHostController
 import com.example.littlelemon.data.local.LocalDataSource
 import com.example.littlelemon.data.local.SharedPreferencesManager
 import com.example.littlelemon.data.repository.UserRepository
-import com.example.littlelemon.ui.onboarding.components.Header
+import com.example.littlelemon.ui.components.Header
 import com.example.littlelemon.ui.theme.LittleLemonColor
 import com.example.littlelemon.ui.theme.Strings
 
@@ -31,7 +31,7 @@ fun OnboardingScreen(navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var errorMessage by remember { mutableStateOf("") }
     var successMessage by remember { mutableStateOf("") }
-
+    var isLoading by remember { mutableStateOf(false) }
 
     val sharedPreferencesManager = SharedPreferencesManager(navController.context)
     val localDataSource = LocalDataSource(sharedPreferencesManager)
@@ -148,16 +148,20 @@ fun OnboardingScreen(navController: NavHostController) {
                         errorMessage = "Registration unsuccessful. Please enter all data."
                     } else {
                         if (viewModel.saveUser(firstName, lastName, email)) {
+                            sharedPreferencesManager.setLoggedIn(true)
+                            successMessage = "Registration successful!"
+                            errorMessage = ""
                             navController.navigate("home")
                         } else {
-                            errorMessage = "Registration unsuccessful. Please enter all data."
+                            errorMessage = "Registration unsuccessful. Please try again."
+                            successMessage = ""
                         }
                     }
                 },
                 modifier = Modifier
                     .background(LittleLemonColor.yellow)
                     .fillMaxWidth()
-                    .padding(16.dp)
+                    .padding(3.dp)
             ) {
                 Text(
                     text = "Register",

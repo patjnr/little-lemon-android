@@ -45,6 +45,17 @@ class SharedPreferencesManager(context: Context) {
             apply()
         }
     }
+    fun getFirstName(): String {
+        return sharedPreferences.getString(KEY_FIRST_NAME, "") ?: ""
+    }
+
+    fun getLastName(): String {
+        return sharedPreferences.getString(KEY_LAST_NAME, "") ?: ""
+    }
+
+    fun getEmail(): String {
+        return sharedPreferences.getString(KEY_EMAIL, "") ?: ""
+    }
 
     fun clearUserData() {
         sharedPreferences.edit().clear().apply()

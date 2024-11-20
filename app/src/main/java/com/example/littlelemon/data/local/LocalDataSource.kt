@@ -5,7 +5,6 @@ import com.example.littlelemon.domain.model.User
 
 class LocalDataSource(private val sharedPreferencesManager: SharedPreferencesManager) {
     fun saveUser(user: User) {
-        Log.d("RegisterUser", "$user")
         sharedPreferencesManager.saveUser(user)
     }
 

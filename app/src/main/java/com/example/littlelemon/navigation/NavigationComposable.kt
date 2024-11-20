@@ -12,50 +12,35 @@ import com.example.littlelemon.ui.onboarding.OnboardingScreen
 import com.example.littlelemon.ui.profile.ProfileScreen
 
 @Composable
-fun NavigationComposable(context: Context, navController: NavHostController = rememberNavController()) {
+fun NavigationComposable(
+    context: Context,
+    navController: NavHostController = rememberNavController()
+) {
     val sharedPreferencesManager = SharedPreferencesManager(context)
     val isLoggedIn by rememberUpdatedState(sharedPreferencesManager.isUserLoggedIn())
-
     val startDestination = if (isLoggedIn) Home.route else Onboarding.route
-
-    LaunchedEffect(isLoggedIn) {
-        if (!isLoggedIn) {
-            navController.navigate(Onboarding.route) {
-                popUpTo(0)
-            }
-        }
-    }
 
     NavHost(navController = navController, startDestination = startDestination) {
         composable(Onboarding.route) {
             OnboardingScreen(navController = navController)
         }
         composable(Home.route) {
-            if (isLoggedIn) {
-                HomeScreen(onNavigateToProfile = { navController.navigate(Profile.route) })
-            } else {
-                navController.navigate(Onboarding.route) {
-                    popUpTo(0)
-                }
-            }
+            HomeScreen(navController = navController)
         }
 
         composable(Profile.route) {
-            if (isLoggedIn) {
-                ProfileScreen(
-                    onLogout = {
-                        sharedPreferencesManager.clearUserData()
-                        sharedPreferencesManager.setLoggedIn(false)  // Set login status to false
-                        navController.navigate(Onboarding.route) {
-                            popUpTo(0)
-                        }
+            ProfileScreen(navController = navController, sharedPreferencesManager = sharedPreferencesManager)
+            /*
+                onLogout = {
+                    sharedPreferencesManager.clearUserData()
+                    sharedPreferencesManager.setLoggedIn(false)
+                    navController.navigate(Onboarding.route) {
+                        popUpTo(0)
                     }
-                )
-            } else {
-                navController.navigate(Onboarding.route) {
-                    popUpTo(0)
                 }
-            }
+            )
+
+             */
         }
     }
 }

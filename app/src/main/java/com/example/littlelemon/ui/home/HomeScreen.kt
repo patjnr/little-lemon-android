@@ -1,28 +1,38 @@
 package com.example.littlelemon.ui.home
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.TextButton
-import androidx.compose.material3.Text
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.example.littlelemon.ui.theme.LittleLemonColor
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.example.littlelemon.R
+import com.example.littlelemon.ui.TopBar
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(onNavigateToProfile: () -> Unit) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        TextButton(
-            onClick = onNavigateToProfile,
-            modifier = Modifier.fillMaxSize()
+fun HomeScreen(navController: NavController) {
+    Scaffold(
+        topBar = {
+            TopBar(navController = navController, showProfileIcon = true)
+        }
+    ) { innerPadding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+            contentAlignment = Alignment.Center
         ) {
-            Text(
-                text = "Go to Profile",
-                color = LittleLemonColor.green
+
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = "Logo",
+                modifier = Modifier.size(200.dp) // Size of the logo in the center
             )
         }
     }
 }
+
