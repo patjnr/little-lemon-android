@@ -26,10 +26,12 @@ import com.example.littlelemon.ui.theme.Strings
 
 @Composable
 fun OnboardingScreen(navController: NavHostController) {
-    var firstName by remember { mutableStateOf("Paul") }
-    var lastName by remember { mutableStateOf("Chito") }
-    var email by remember { mutableStateOf("paul.chito@chitosystems.com") }
+    var firstName by remember { mutableStateOf("") }
+    var lastName by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
     var errorMessage by remember { mutableStateOf("") }
+    var successMessage by remember { mutableStateOf("") }
+
 
     val sharedPreferencesManager = SharedPreferencesManager(navController.context)
     val localDataSource = LocalDataSource(sharedPreferencesManager)
@@ -118,6 +120,18 @@ fun OnboardingScreen(navController: NavHostController) {
                 Text(
                     text = errorMessage,
                     color = Color.Red,
+                    fontSize = 16.sp,
+                    modifier = Modifier
+                        .padding(vertical = 8.dp)
+                        .fillMaxWidth(),
+                    textAlign = TextAlign.Center
+                )
+            }
+
+            if (successMessage.isNotEmpty()) {
+                Text(
+                    text = successMessage,
+                    color = Color.Green,
                     fontSize = 16.sp,
                     modifier = Modifier
                         .padding(vertical = 8.dp)
