@@ -1,4 +1,4 @@
-package com.chitosystems.littlelemon.ui.theme
+package com.example.littlelemon.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -14,7 +14,17 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
-    )
+    ),
+
+    titleLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 22.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp
+    ),
+
+
     /* Other default text styles to override
     titleLarge = TextStyle(
         fontFamily = FontFamily.Default,
@@ -30,5 +40,29 @@ val Typography = Typography(
         lineHeight = 16.sp,
         letterSpacing = 0.5.sp
     )
+
+
+     h1 = TextStyle(
+        fontSize = 26.sp,
+        fontWeight = FontWeight.Bold,
+        color = LittleLemonColor.charcoal
+    ),
+    h2 = TextStyle(
+        color = LittleLemonColor.charcoal,
+        fontSize = 18.sp,
+        fontWeight = FontWeight.Bold
+    ),
+    body1 = TextStyle(
+        color = LittleLemonColor.green
+    ),
+    body2 = TextStyle(
+        fontWeight = FontWeight.Bold,
+        color = LittleLemonColor.green
+    ),
+    button = TextStyle(
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Bold
+    )
     */
 )
+

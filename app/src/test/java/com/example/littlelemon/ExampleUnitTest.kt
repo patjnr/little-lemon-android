@@ -1,4 +1,4 @@
-package com.chitosystems.littlelemon
+package com.example.littlelemon
 
 import org.junit.Test
 

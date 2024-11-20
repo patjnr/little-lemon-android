@@ -1,4 +1,4 @@
-package com.chitosystems.littlelemon.ui.theme
+package com.example.littlelemon.ui.theme
 
 import android.app.Activity
 import android.os.Build
