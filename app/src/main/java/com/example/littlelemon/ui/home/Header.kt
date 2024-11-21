@@ -1,4 +1,4 @@
-package com.example.littlelemon.ui.components
+package com.example.littlelemon.ui.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

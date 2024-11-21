@@ -28,9 +28,6 @@ fun HomeScreen(
 ) {
     var searchPhrase by remember { mutableStateOf("") }
     var selectedCategory by remember { mutableStateOf<String?>("All") }
-
-    Log.d("selectedCategory", "selectedCategory " + selectedCategory)
-
     val databaseMenuItems by appDataBase.menuItemDao().getAll().observeAsState(emptyList())
     var orderMenuItems by remember { mutableStateOf(false) }
     val categories = listOf("All") + databaseMenuItems

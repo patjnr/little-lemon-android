@@ -1,7 +1,6 @@
 package com.example.littlelemon.ui.theme
 
 object Strings {
-    const val APP_NAME = "Little Lemon"
     const val TITLE = "Little Lemon"
     const val LOCATION = "Chicago"
     const val DESCRIPTION =

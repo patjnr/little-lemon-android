@@ -10,8 +10,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.littlelemon.navigation.NavigationComposable
 import com.example.littlelemon.ui.theme.LittleLemonColor
 import com.example.littlelemon.ui.theme.LittleLemonTheme
@@ -39,15 +37,9 @@ class MainActivity : ComponentActivity() {
             .build()
     }
 
-    val migration_1_2 = object : Migration(1, 2) {
-        override fun migrate(database: SupportSQLiteDatabase) {
-            database.execSQL("DROP TABLE IF EXISTS MenuItemRoom")
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
 
         setContent {
             LittleLemonTheme {

@@ -63,7 +63,7 @@ fun HeroSection(
             }
             Image(
                 painter = painterResource(id = R.drawable.hero_image),
-                contentDescription = "Upper Panel Image",
+                contentDescription = "Hero Image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .width(150.dp)

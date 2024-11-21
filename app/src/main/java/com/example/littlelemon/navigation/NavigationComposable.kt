@@ -38,17 +38,6 @@ fun NavigationComposable(
                 navController = navController,
                 sharedPreferencesManager = sharedPreferencesManager
             )
-            /*
-                onLogout = {
-                    sharedPreferencesManager.clearUserData()
-                    sharedPreferencesManager.setLoggedIn(false)
-                    navController.navigate(Onboarding.route) {
-                        popUpTo(0)
-                    }
-                }
-            )
-
-             */
         }
     }
 }
