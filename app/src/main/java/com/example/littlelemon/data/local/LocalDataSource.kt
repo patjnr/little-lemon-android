@@ -1,6 +1,5 @@
 package com.example.littlelemon.data.local
 
-import android.util.Log
 import com.example.littlelemon.domain.model.User
 
 class LocalDataSource(private val sharedPreferencesManager: SharedPreferencesManager) {

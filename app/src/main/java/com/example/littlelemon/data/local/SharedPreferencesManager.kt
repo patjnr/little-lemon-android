@@ -45,6 +45,7 @@ class SharedPreferencesManager(context: Context) {
             apply()
         }
     }
+
     fun getFirstName(): String {
         return sharedPreferences.getString(KEY_FIRST_NAME, "") ?: ""
     }

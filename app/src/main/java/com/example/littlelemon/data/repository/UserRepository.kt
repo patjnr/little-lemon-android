@@ -1,6 +1,5 @@
 package com.example.littlelemon.data.repository
 
-import android.util.Log
 import com.example.littlelemon.data.local.LocalDataSource
 import com.example.littlelemon.data.local.SharedPreferencesManager
 import com.example.littlelemon.domain.model.User

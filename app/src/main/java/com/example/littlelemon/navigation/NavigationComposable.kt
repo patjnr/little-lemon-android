@@ -30,11 +30,14 @@ fun NavigationComposable(
             val database by lazy {
                 Room.databaseBuilder(context, AppDatabase::class.java, "database").build()
             }
-            HomeScreen(navController = navController, appDataBase =database)
+            HomeScreen(navController = navController, appDataBase = database)
         }
 
         composable(Profile.route) {
-            ProfileScreen(navController = navController, sharedPreferencesManager = sharedPreferencesManager)
+            ProfileScreen(
+                navController = navController,
+                sharedPreferencesManager = sharedPreferencesManager
+            )
             /*
                 onLogout = {
                     sharedPreferencesManager.clearUserData()
