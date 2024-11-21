@@ -6,6 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.room.Room
+import com.example.littlelemon.AppDatabase
 import com.example.littlelemon.data.local.SharedPreferencesManager
 import com.example.littlelemon.ui.home.HomeScreen
 import com.example.littlelemon.ui.onboarding.OnboardingScreen
@@ -25,7 +27,10 @@ fun NavigationComposable(
             OnboardingScreen(navController = navController)
         }
         composable(Home.route) {
-            HomeScreen(navController = navController)
+            val database by lazy {
+                Room.databaseBuilder(context, AppDatabase::class.java, "database").build()
+            }
+            HomeScreen(navController = navController, appDataBase =database)
         }
 
         composable(Profile.route) {

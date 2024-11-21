@@ -6,7 +6,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// Set of Material typography styles to start with
+// Set of Material 3 typography styles
 val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = FontFamily.Default,
@@ -24,45 +24,28 @@ val Typography = Typography(
         letterSpacing = 0.sp
     ),
 
-
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-
-
-     h1 = TextStyle(
+    headlineLarge = TextStyle(
         fontSize = 26.sp,
         fontWeight = FontWeight.Bold,
         color = LittleLemonColor.charcoal
     ),
-    h2 = TextStyle(
-        color = LittleLemonColor.charcoal,
-        fontSize = 18.sp,
-        fontWeight = FontWeight.Bold
+    headlineMedium = TextStyle(
+        fontSize = 20.sp,
+        color = LittleLemonColor.charcoal
     ),
-    body1 = TextStyle(
+    bodyMedium = TextStyle(
+        fontSize = 16.sp,
+        fontWeight = FontWeight.Normal,
         color = LittleLemonColor.green
     ),
-    body2 = TextStyle(
-        fontWeight = FontWeight.Bold,
-        color = LittleLemonColor.green
-    ),
-    button = TextStyle(
+    bodySmall = TextStyle(
         fontSize = 14.sp,
-        fontWeight = FontWeight.Bold
+        fontWeight = FontWeight.Normal,
+        color = LittleLemonColor.green
+    ),
+    labelLarge = TextStyle(
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Normal,
+        color = LittleLemonColor.charcoal
     )
-    */
 )
-

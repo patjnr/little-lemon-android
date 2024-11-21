@@ -1,7 +1,9 @@
 package com.example.littlelemon.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -17,9 +19,18 @@ import com.example.littlelemon.ui.theme.LittleLemonColor
 fun TopBar(navController: NavController, showProfileIcon: Boolean = true) {
     TopAppBar(
         title = {
-            Text(
-                text = ""
-            )
+            Box(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .fillMaxWidth(),
+                contentAlignment = androidx.compose.ui.Alignment.Center
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.logo),
+                    contentDescription = "Logo",
+                    modifier = Modifier.size(185.dp)
+                )
+            }
         },
         actions = {
             if (showProfileIcon) {
@@ -35,4 +46,3 @@ fun TopBar(navController: NavController, showProfileIcon: Boolean = true) {
         colors = TopAppBarDefaults.topAppBarColors(containerColor = LittleLemonColor.white)
     )
 }
-
